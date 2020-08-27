@@ -1,17 +1,18 @@
 const API_KEY = '6bb5d740e8a1ab3796e7f0b7d5c47d91';
 const API_BASE = 'https://api.themoviedb.org/3';
-/* Lista de Filmes:
--Originais Netflix
--Recomendados
--Ação 
--Romance
--Terror
--Documentário
--Comedia
--Top Rated
+
+/*
+- originais da netflix
+- recomendados (trending)
+- em alta (top rated)
+- ação
+- comédia
+- terror
+- romance
+- documentários
 */
 
-const basicFetch = async (endpoint) =>{
+const basicFetch = async (endpoint) => {
     const req = await fetch(`${API_BASE}${endpoint}`);
     const json = await req.json();
     return json;
@@ -21,44 +22,64 @@ export default {
     getHomeList: async () => {
         return [
             {
-                slug: 'originais',
-               title: 'Originais do Netflix',
-               itens: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`) // Indormaçoes na Documentalão de API TMDB
+                slug: 'originals',
+                title: 'Originais do Netflix',
+                items: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`)
             },
             {
                 slug: 'trending',
-               title: 'Recomendado para Você',
-               itens: await basicFetch(`/trending/all/week?&language=pt-BR&api_key=${API_KEY}`)
+                title: 'Recomendados para Você',
+                items: await basicFetch(`/trending/all/week?language=pt-BR&api_key=${API_KEY}`)
             },
             {
-                 slug: 'toprated',
+                slug: 'toprated',
                 title: 'Em Alta',
-                itens: await basicFetch(`/movie/top_rated?language=pt-BR&api_key=${API_KEY}`)            },
+                items: await basicFetch(`/movie/top_rated?language=pt-BR&api_key=${API_KEY}`)
+            },
             {
                 slug: 'action',
-               title: 'Ação',
-               itens: await basicFetch(`/discover/movie?with_genres=28&language=pt-BR&api_key=${API_KEY}`)  
+                title: 'Ação',
+                items: await basicFetch(`/discover/movie?with_genres=28&language=pt-BR&api_key=${API_KEY}`)
             },
             {
                 slug: 'comedy',
-               title: 'Comédia',
-               itens: await basicFetch(`/discover/movie?with_genres=35&language=pt-BR&api_key=${API_KEY}`)
+                title: 'Comédia',
+                items: await basicFetch(`/discover/movie?with_genres=35&language=pt-BR&api_key=${API_KEY}`)
             },
             {
                 slug: 'horror',
-               title: 'Terror',
-               itens: await basicFetch(`/discover/movie?with_genres=27&language=pt-BR&api_key=${API_KEY}`)
+                title: 'Terror',
+                items: await basicFetch(`/discover/movie?with_genres=27&language=pt-BR&api_key=${API_KEY}`)
             },
             {
                 slug: 'romance',
-               title: 'Romance',
-               itens: await basicFetch(`/discover/movie?with_genres=10749&language=pt-BR&api_key=${API_KEY}`)
+                title: 'Romance',
+                items: await basicFetch(`/discover/movie?with_genres=10749&language=pt-BR&api_key=${API_KEY}`)
             },
             {
                 slug: 'documentary',
-               title: 'Documentários',
-               itens: await basicFetch(`/discover/movie?with_genres=99&language=pt-BR&api_key=${API_KEY}`)
+                title: 'Documentários',
+                items: await basicFetch(`/discover/movie?with_genres=99&language=pt-BR&api_key=${API_KEY}`)
             },
         ];
+    },
+    getMovieInfo: async (movieId, type) => {
+        let info = {};
+
+        if(movieId) {
+            switch(type) {
+                case 'movie':
+                    info = await basicFetch(`/movie/${movieId}?language=pt-BR&api_key=${API_KEY}`);
+                break;
+                case 'tv':
+                    info = await basicFetch(`/tv/${movieId}?language=pt-BR&api_key=${API_KEY}`);
+                break;
+                default:
+                    info = null;
+                break;
+            }
+        }
+
+        return info;
     }
 }
