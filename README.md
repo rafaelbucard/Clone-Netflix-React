@@ -11,3 +11,13 @@ Documentação da API:  https://www.themoviedb.org/documentation/api?language=pt
 * 2 npm install @material-ui/core
 * 3 npm install @material-ui/icons
 * 4 npm start 
+
+# Desktop
+
+![alt text](https://github.com/rafaelbucard/Clone-Netflix-React/blob/master/desktop.png)
+
+![alt text](https://github.com/rafaelbucard/Clone-Netflix-React/blob/master/desktop2.png)
+
+# Mobile
+
+![alt text](https://github.com/rafaelbucard/Clone-Netflix-React/blob/master/mobile.png)
