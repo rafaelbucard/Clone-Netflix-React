@@ -1,4 +1,7 @@
-# Clone-Netflix-React
+# Clone-Netflix-React 
+
+Link: http://teste.rafaelbucard.com/
+
  Clone do Site Netflix criado com React, toda imagens e informaçoes sobre os filmes foram extraidas da API do The Movie Database.  
 Documentação da API:  https://www.themoviedb.org/documentation/api?language=pt-BR
  **(O Objetivo do Projeto é demonstrar habilidades com React e uso de APIs)**
@@ -11,3 +14,13 @@ Documentação da API:  https://www.themoviedb.org/documentation/api?language=pt
 * 2 npm install @material-ui/core
 * 3 npm install @material-ui/icons
 * 4 npm start 
+
+# Desktop
+
+![alt text](https://github.com/rafaelbucard/Clone-Netflix-React/blob/master/desktop.png)
+
+![alt text](https://github.com/rafaelbucard/Clone-Netflix-React/blob/master/desktop2.png)
+
+# Mobile
+
+![alt text](https://github.com/rafaelbucard/Clone-Netflix-React/blob/master/mobile.png)
