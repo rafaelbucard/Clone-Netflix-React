@@ -10,4 +10,4 @@ Documentação da API:  https://www.themoviedb.org/documentation/api?language=pt
 * 1 Abrir terminal VS Code
 * 2 npm install @material-ui/core
 * 3 npm install @material-ui/icons
-* 3 npm start 
+* 4 npm start 
