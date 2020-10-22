@@ -1,4 +1,4 @@
-# Clone-Netflix-React 
+# Clone-Netflix-React  :movie_camera: :clapper:
 
 Link: http://teste.rafaelbucard.com/
 
