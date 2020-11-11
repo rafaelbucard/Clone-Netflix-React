@@ -24,3 +24,6 @@ Documentação da API:  https://www.themoviedb.org/documentation/api?language=pt
 # Mobile
 
 ![alt text](https://github.com/rafaelbucard/Clone-Netflix-React/blob/master/mobile.png)
+
+
+Criado com amor por Rafael Buçard! 
