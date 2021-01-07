@@ -17,7 +17,6 @@ Documentação da API:  https://www.themoviedb.org/documentation/api?language=pt
 
 # Desktop
 
-![alt text](https://github.com/rafaelbucard/Clone-Netflix-React/blob/master/desktop.png)
 
 ![alt text](https://github.com/rafaelbucard/Clone-Netflix-React/blob/master/desktop2.png)
 
